@@ -1,0 +1,185 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Список сотрудников</h2>
+    <button class="btn btn-primary" (click)="toggleForm()">Добавить сотрудника</button>
+  </div>
+
+  <div *ngIf="confirmationMessage" class="alert alert-success">
+    {{ confirmationMessage }}
+  </div>
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <div class="modal-overlay" *ngIf="showDeleteModal">
+  <div class="modal-delete">
+    <h5>Подтверждение удаления</h5>
+    <p>Вы уверены, что хотите удалить сотрудника:</p>
+    <p><strong>{{ employeeToDelete?.surname }} {{ employeeToDelete?.name }} {{ employeeToDelete?.patronymic }}</strong></p>
+    <p>Отдел: <em>{{ employeeToDelete?.department }}</em></p>
+    
+    <div class="modal-buttons">
+      <button class="btn btn-danger" (click)="confirmDelete()">Удалить</button>
+      <button class="btn btn-secondary" (click)="closeDeleteModal()">Отмена</button>
+    </div>
+  </div>
+</div>
+
+  <div *ngIf="showForm" class="card card-body mb-4">
+    <form #form="ngForm" (ngSubmit)="submitForm(form)">
+      <div *ngIf="validationError" class="alert alert-danger">
+        {{ validationError }}
+      </div>
+
+      <div class="mb-3">
+        <label>Отдел</label>
+        <input type="text" class="form-control" [(ngModel)]="newEmployee.department" name="department" required>
+      </div>
+      <div class="mb-3">
+        <label>Фамилия</label>
+        <input type="text" class="form-control" [(ngModel)]="newEmployee.surname" name="surname" required>
+      </div>
+      <div class="mb-3">
+        <label>Имя</label>
+        <input type="text" class="form-control" [(ngModel)]="newEmployee.name" name="name" required>
+      </div>
+      <div class="mb-3">
+        <label>Отчество</label>
+        <input type="text" class="form-control" [(ngModel)]="newEmployee.patronymic" name="patronymic" required>
+      </div>
+      <div class="mb-3">
+        <label>Дата рождения</label>
+        <input type="date" class="form-control" [(ngModel)]="newEmployee.birthDate" name="birthDate" required>
+      </div>
+      <div class="mb-3">
+        <label>Дата устройства на работу</label>
+        <input type="date" class="form-control" [(ngModel)]="newEmployee.dateEmployment" name="dateEmployment" required>
+      </div>
+      <div class="mb-3">
+        <label>Зарплата</label>
+        <input type="number" class="form-control" [(ngModel)]="newEmployee.salary" name="salary" required min="0">
+      </div>
+
+      <button type="submit" class="btn btn-success">Сохранить</button>
+      <button type="button" class="btn btn-secondary ms-2" (click)="cancelForm()">Отмена</button>
+    </form>
+  </div>
+
+
+  <div *ngIf="showChangeForm" class="card card-body mb-4">
+    <form #form="ngForm" (ngSubmit)="updateEmployee()">
+       <input type="hidden" [(ngModel)]="newEmployee.id" name="idEmployer">
+      <div *ngIf="validationError" class="alert alert-danger">
+        {{ validationError }}
+      </div>
+       <div class="mb-3">
+        <label>Идентификатор</label>
+        <input type="text" readonly="true" class="form-control" [(ngModel)]="newEmployee.id" name="Id" required>
+      </div>
+      <div class="mb-3">
+        <label>Отдел</label>
+        <input type="text" class="form-control" [(ngModel)]="newEmployee.department" name="department" required>
+      </div>
+      <div class="mb-3">
+        <label>Фамилия</label>
+        <input type="text" class="form-control" [(ngModel)]="newEmployee.surname" name="surname" required>
+      </div>
+      <div class="mb-3">
+        <label>Имя</label>
+        <input type="text" class="form-control" [(ngModel)]="newEmployee.name" name="name" required>
+      </div>
+      <div class="mb-3">
+        <label>Отчество</label>
+        <input type="text" class="form-control" [(ngModel)]="newEmployee.patronymic" name="patronymic" required>
+      </div>
+      <div class="mb-3">
+        <label>Дата рождения</label>
+        <input type="date" class="form-control" [(ngModel)]="newEmployee.birthDate" name="birthDate" required>
+
+      </div>
+      <div class="mb-3">
+        <label>Дата устройства на работу</label>
+        <input type="date" class="form-control" [(ngModel)]="newEmployee.dateEmployment" name="dateEmployment" required>
+      </div>
+      <div class="mb-3">
+        <label>Зарплата</label>
+        <input type="number" class="form-control" [(ngModel)]="newEmployee.salary" name="salary" required min="0">
+      </div>
+
+      <button type="submit" class="btn btn-success">Сохранить изменения</button>
+      <button type="button" class="btn btn-secondary ms-2" (click)="cancelChangeForm()">Отмена</button>
+    </form>
+  </div>
+
+  <table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th (click)="sortBy('department')" style="cursor: pointer">
+        Отдел
+        <span *ngIf="sortColumn === 'department'">
+          <i [class]="sortDirection === 'asc' ? 'bi bi-caret-up-fill' : 'bi bi-caret-down-fill'"></i>
+        </span>
+      </th>
+      <th (click)="sortBy('surname')" style="cursor: pointer">
+        Ф.И.О
+        <span *ngIf="sortColumn === 'surname'">
+          <i [class]="sortDirection === 'asc' ? 'bi bi-caret-up-fill' : 'bi bi-caret-down-fill'"></i>
+        </span>
+      </th>
+      <th (click)="sortBy('birthDate')" style="cursor: pointer">
+        Дата рождения
+        <span *ngIf="sortColumn === 'birthDate'">
+          <i [class]="sortDirection === 'asc' ? 'bi bi-caret-up-fill' : 'bi bi-caret-down-fill'"></i>
+        </span>
+      </th>
+      <th (click)="sortBy('dateEmployment')" style="cursor: pointer">
+        Дата устройства
+        <span *ngIf="sortColumn === 'dateEmployment'">
+          <i [class]="sortDirection === 'asc' ? 'bi bi-caret-up-fill' : 'bi bi-caret-down-fill'"></i>
+        </span>
+      </th>
+      <th (click)="sortBy('salary')" style="cursor: pointer">
+        Зарплата
+        <span *ngIf="sortColumn === 'salary'">
+          <i [class]="sortDirection === 'asc' ? 'bi bi-caret-up-fill' : 'bi bi-caret-down-fill'"></i>
+        </span>
+      </th>
+      <th>Управление</th>
+    </tr>
+    <tr>
+      <th>
+        <input class="form-control form-control-sm" [(ngModel)]="filter.department" placeholder="Фильтр..." />
+      </th>
+      <th>
+        <input class="form-control form-control-sm mb-1" [(ngModel)]="filter.surname" placeholder="Фамилия" />
+        <input class="form-control form-control-sm mb-1" [(ngModel)]="filter.name" placeholder="Имя" />
+        <input class="form-control form-control-sm" [(ngModel)]="filter.patronymic" placeholder="Отчество" />
+      </th>
+      <th>
+        <input type="date" class="form-control form-control-sm" [(ngModel)]="filter.birthDate" />
+      </th>
+      <th>
+        <input type="date" class="form-control form-control-sm" [(ngModel)]="filter.dateEmployment" />
+      </th>
+      <th>
+        <input type="number" class="form-control form-control-sm" [(ngModel)]="filter.salary" placeholder="Зарплата" />
+      </th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of filteredEmployees">
+      <td>{{ e.department }}</td>
+      <td>{{ e.surname }} {{ e.name }} {{ e.patronymic }}</td>
+      <td>{{ e.birthDate | date: 'dd.MM.yyyy' }}</td>
+      <td>{{ e.dateEmployment | date: 'dd.MM.yyyy' }}</td>
+      <td>{{ e.salary | currency: 'RUB':'symbol':'1.0-0' }}</td>
+      <td>
+        <button type="button" class="btn btn-success btn-sm" (click)="toggleChangeForm(e)">Изменить</button>
+        <button type="button" class="btn btn-secondary btn-sm ms-2" (click)="openDeleteModal(e)">Удалить</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</div>

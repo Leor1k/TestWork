@@ -1,0 +1,46 @@
+.employee-list {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.employee-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  width: 200px;
+}
+
+.employee-card img {
+  width: 100%;
+  border-radius: 5px;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+}
+
+.modal-delete {
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 5px 15px rgba(0,0,0,.5);
+  text-align: center;
+}
+
+.modal-delete h5 {
+  margin-bottom: 15px;
+}
+
+.modal-buttons {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-around;
+}

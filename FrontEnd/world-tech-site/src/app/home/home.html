@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>МирТех — Решения для тех, кто выбирает лучших</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #0b3d91;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 20px;
+      color: #d0e1ff;
+    }
+
+    section.description {
+      padding: 40px 20px;
+      background-color: #ffffff;
+      text-align: center;
+    }
+
+    .description p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 20px;
+    }
+
+    section.stats {
+      background-color: #e8f1fd;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .stat {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .stat .number {
+      font-size: 28px;
+      font-weight: bold;
+      color: #0b3d91;
+    }
+
+    .stat .label {
+      font-size: 16px;
+      margin-top: 5px;
+    }
+
+    section.about {
+      padding: 50px 20px;
+      background-color: #ffffff;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 18px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 36px;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>МирТех</h1>
+    <p>Решения для тех, кто выбирает лучших.</p>
+  </header>
+
+  <section class="description">
+    <p>
+      IT-конструкторы для проведения любых видов конкурсов и отборов: от запуска сайта проекта до оценки результата
+    </p>
+  </section>
+
+  <section class="stats">
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="number">398 520</div>
+        <div class="label">пользователей</div>
+      </div>
+      <div class="stat">
+        <div class="number">450 761</div>
+        <div class="label">проектов</div>
+      </div>
+      <div class="stat">
+        <div class="number">1 035</div>
+        <div class="label">конкурсов</div>
+      </div>
+      <div class="stat">
+        <div class="number">80 199</div>
+        <div class="label">победителей</div>
+      </div>
+      <div class="stat">
+        <div class="number">508,50 млрд.₽</div>
+        <div class="label">выдано</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>Что такое МИРТЕХ?</h2>
+    <p>
+      Мы создаём прозрачную цифровую среду для взаимодействия власти, бизнеса и третьего сектора.
+      Разработали и постоянно совершенствуем линейку IT‑инструментов для реализации программ корпоративной социальной
+      ответственности и поддержки социальных инициатив.
+    </p>
+  </section>
+
+</body>
+</html>

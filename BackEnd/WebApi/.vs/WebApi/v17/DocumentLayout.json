@@ -1,0 +1,69 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ProrokSamBoy\\Desktop\\Test\\TestWork\\BackEnd\\WebApi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{68CCEED5-42FA-4EE1-893E-C02969ECBFAE}|WebApi\\WebApi.csproj|c:\\users\\proroksamboy\\desktop\\test\\testwork\\backend\\webapi\\webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68CCEED5-42FA-4EE1-893E-C02969ECBFAE}|WebApi\\WebApi.csproj|solutionrelative:webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68CCEED5-42FA-4EE1-893E-C02969ECBFAE}|WebApi\\WebApi.csproj|c:\\users\\proroksamboy\\desktop\\test\\testwork\\backend\\webapi\\webapi\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68CCEED5-42FA-4EE1-893E-C02969ECBFAE}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68CCEED5-42FA-4EE1-893E-C02969ECBFAE}|WebApi\\WebApi.csproj|c:\\users\\proroksamboy\\desktop\\test\\testwork\\backend\\webapi\\webapi\\dbcontent\\models\\employer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68CCEED5-42FA-4EE1-893E-C02969ECBFAE}|WebApi\\WebApi.csproj|solutionrelative:webapi\\dbcontent\\models\\employer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ProrokSamBoy\\Desktop\\Test\\TestWork\\BackEnd\\WebApi\\WebApi\\Program.cs",
+              "RelativeDocumentMoniker": "WebApi\\Program.cs",
+              "ToolTip": "C:\\Users\\ProrokSamBoy\\Desktop\\Test\\TestWork\\BackEnd\\WebApi\\WebApi\\Program.cs",
+              "RelativeToolTip": "WebApi\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T13:22:10.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmployeesController.cs",
+              "DocumentMoniker": "C:\\Users\\ProrokSamBoy\\Desktop\\Test\\TestWork\\BackEnd\\WebApi\\WebApi\\Controllers\\EmployeesController.cs",
+              "RelativeDocumentMoniker": "WebApi\\Controllers\\EmployeesController.cs",
+              "ToolTip": "C:\\Users\\ProrokSamBoy\\Desktop\\Test\\TestWork\\BackEnd\\WebApi\\WebApi\\Controllers\\EmployeesController.cs",
+              "RelativeToolTip": "WebApi\\Controllers\\EmployeesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T09:07:53.358Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Employer.cs",
+              "DocumentMoniker": "C:\\Users\\ProrokSamBoy\\Desktop\\Test\\TestWork\\BackEnd\\WebApi\\WebApi\\DbContent\\Models\\Employer.cs",
+              "RelativeDocumentMoniker": "WebApi\\DbContent\\Models\\Employer.cs",
+              "ToolTip": "C:\\Users\\ProrokSamBoy\\Desktop\\Test\\TestWork\\BackEnd\\WebApi\\WebApi\\DbContent\\Models\\Employer.cs",
+              "RelativeToolTip": "WebApi\\DbContent\\Models\\Employer.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAowBIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T08:45:29.993Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
